@@ -20,7 +20,7 @@ public class Cliente extends Pessoa {
         super();
     }
 
-    public Cliente(int id, String nome, String cpf, String email, String senha, String telefone) {
+    public Cliente(Integer id, String nome, String cpf, String email, String senha, String telefone) {
         super(id, nome, cpf, email, senha, telefone);
         addPerfis(TiposPerfil.CLIENTE);
 
