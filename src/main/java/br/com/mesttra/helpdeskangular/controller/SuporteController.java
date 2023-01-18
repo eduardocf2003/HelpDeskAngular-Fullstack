@@ -3,6 +3,7 @@ package br.com.mesttra.helpdeskangular.controller;
 import br.com.mesttra.helpdeskangular.dto.SuporteDTO;
 import br.com.mesttra.helpdeskangular.entity.Suporte;
 import br.com.mesttra.helpdeskangular.services.SuporteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,7 @@ public class SuporteController {
     }
 
     @PostMapping
-    public ResponseEntity<SuporteDTO> create(@RequestBody SuporteDTO objetoDTO) {
+    public ResponseEntity<SuporteDTO> create(@Valid @RequestBody SuporteDTO objetoDTO) {
         Suporte objeto = suporteService.create(objetoDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(objeto.getId()).toUri();
         return ResponseEntity.created(uri).build();

@@ -7,6 +7,7 @@ import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.FetchType;
+import jakarta.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -20,9 +21,13 @@ public class SuporteDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     protected Integer id;
+    @NotNull(message = "O campo nome é obrigatório")
     protected String nome;
+    @NotNull(message = "O campo CPF é obrigatório")
     protected String cpf;
+    @NotNull(message = "O campo email é obrigatório")
     protected String email;
+    @NotNull(message = "O campo senha é obrigatório")
     protected String senha;
     protected String telefone;
     protected Set<Integer> perfis = new HashSet<>();
