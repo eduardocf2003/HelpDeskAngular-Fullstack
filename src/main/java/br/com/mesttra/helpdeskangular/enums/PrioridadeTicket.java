@@ -31,6 +31,6 @@ public enum PrioridadeTicket {
             }
         }
 
-        throw new IllegalArgumentException("Id de prioridade Inválido: " + cod "\n" + "Valores válidos: 0, 1 ou 2");
+        throw new IllegalArgumentException("Id de prioridade Inválido: " + cod + "\n" + "Valores válidos: 0, 1 ou 2");
     }
 }
