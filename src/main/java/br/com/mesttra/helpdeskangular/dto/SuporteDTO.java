@@ -11,6 +11,7 @@ import jakarta.persistence.FetchType;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -42,6 +43,10 @@ public class SuporteDTO implements Serializable {
         this.telefone = obj.getTelefone();
         this.perfis = obj.getPerfis().stream().map(x -> x.getCod()).collect(Collectors.toSet());
         this.dataCriacao = obj.getDataCriacao();
+    }
+
+    public static List<SuporteDTO> converter(List<Suporte> lista) {
+        return lista.stream().map(SuporteDTO::new).collect(Collectors.toList());
     }
 
     public Integer getId() {
