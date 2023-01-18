@@ -3,6 +3,7 @@ package br.com.mesttra.helpdeskangular.entity;
 import br.com.mesttra.helpdeskangular.enums.TiposPerfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -21,6 +22,7 @@ public abstract class Pessoa implements Serializable {
     protected Integer id;
     @Column(nullable = false)
     protected String nome;
+    @CPF
     @Column(unique = true)
     protected String cpf;
     @Column(nullable = false)

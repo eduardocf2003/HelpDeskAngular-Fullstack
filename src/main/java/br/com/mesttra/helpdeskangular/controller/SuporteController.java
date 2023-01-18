@@ -41,6 +41,18 @@ public class SuporteController {
         return ResponseEntity.created(uri).build();
     }
 
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<SuporteDTO> update(@PathVariable Integer id, @Valid @RequestBody SuporteDTO objetoDTO) {
+        Suporte objeto = suporteService.update(id, objetoDTO);
+        return ResponseEntity.ok().body(new SuporteDTO(objeto));
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<SuporteDTO> delete(@PathVariable Integer id) {
+        suporteService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 }
