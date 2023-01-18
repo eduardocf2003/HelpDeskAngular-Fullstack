@@ -1,5 +1,6 @@
 package br.com.mesttra.helpdeskangular.controller;
 
+import br.com.mesttra.helpdeskangular.dto.SuporteDTO;
 import br.com.mesttra.helpdeskangular.entity.Suporte;
 import br.com.mesttra.helpdeskangular.services.SuporteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,9 @@ public class SuporteController {
     private SuporteService suporteService;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Suporte> findById(@PathVariable Integer id) {
+    public ResponseEntity<SuporteDTO> findById(@PathVariable Integer id) {
         Suporte objeto = suporteService.findById(id);
-        return ResponseEntity.ok().body(objeto);
+        return ResponseEntity.ok().body(new SuporteDTO(objeto));
     }
 
 
