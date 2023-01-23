@@ -30,6 +30,10 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListaSuporteComponent } from './components/suporte/lista-suporte/lista-suporte.component';
 import { LoginComponent } from './components/login/login.component';
+import { TicketCreateComponent } from './components/tickets/ticket-create/ticket-create.component';
+import { TicketListComponent } from './components/tickets/ticket-list/ticket-list.component';
+import { TicketReadComponent } from './components/tickets/ticket-read/ticket-read.component';
+import { TicketUpdateComponent } from './components/tickets/ticket-update/ticket-update.component';
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { LoginComponent } from './components/login/login.component';
     HomeComponent,
     HeaderComponent,
     ListaSuporteComponent,
-    LoginComponent
+    LoginComponent,
+    TicketCreateComponent,
+    TicketListComponent,
+    TicketReadComponent,
+    TicketUpdateComponent
   ],
   imports: [
     BrowserModule,
