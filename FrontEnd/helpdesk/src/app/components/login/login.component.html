@@ -2,34 +2,19 @@
     <form class="form mat-elevation-z10">
 
         <h1>HelpDesk FullStack</h1>
-        <img src="assets/img/login-svgrepo-com.svg" alt="login">
+        <img src="assets/img/login-svgrepo-com.svg" alt="">
 
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>E-mail</mat-label>
-          <input 
-          [formControl]="email"
-          required
-          [(ngModel)]="creds.email" 
-          name="email" 
-          matInput 
-          placeholder="Ex. fulano@mail.com">
-          <mat-icon matSuffix>email</mat-icon>
-       </mat-form-field>
- 
-       <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Senha</mat-label>
-          <input 
-          [formControl]="senha"
-          required
-          [(ngModel)]="creds.senha" 
-          name="senha" 
-          type="password" 
-          matInput 
-          placeholder="Ex. 123">
-          <mat-icon matSuffix>password</mat-icon>
-       </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input matInput placeholder="Ex. seuemail@email.com">
+    </mat-form-field>
+    
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput placeholder="Ex. suasenha123">
+      </mat-form-field>
 
-      <button (click)="logar()" [disabled]="!validaCampos()" class= "full-width mat-elevation-z6" mat-flat-button color="accent">Logar</button>
+      <button class= "full-width mat-elevation-z6" mat-flat-button color="accent">Logar</button>
 
   </form>
   </div>
