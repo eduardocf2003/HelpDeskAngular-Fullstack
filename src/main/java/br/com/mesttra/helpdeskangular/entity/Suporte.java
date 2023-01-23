@@ -3,8 +3,8 @@ package br.com.mesttra.helpdeskangular.entity;
 import br.com.mesttra.helpdeskangular.dto.SuporteDTO;
 import br.com.mesttra.helpdeskangular.enums.TiposPerfil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class Suporte extends Pessoa {
 
     public Suporte(Integer id, String nome, String cpf, String email, String senha, String telefone) {
         super(id, nome, cpf, email, senha, telefone);
-        addPerfis(TiposPerfil.SUPORTE);
+        addPerfis(TiposPerfil.CLIENTE);
     }
 
     public Suporte(SuporteDTO obj) {

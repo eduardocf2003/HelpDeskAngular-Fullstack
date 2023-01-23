@@ -3,11 +3,11 @@ package br.com.mesttra.helpdeskangular.dto;
 import br.com.mesttra.helpdeskangular.entity.Suporte;
 import br.com.mesttra.helpdeskangular.enums.TiposPerfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.CollectionTable;
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.FetchType;
-import jakarta.validation.constraints.NotNull;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.FetchType;
+import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.time.LocalDate;

@@ -1,6 +1,5 @@
 package br.com.mesttra.helpdeskangular.config;
 
-import br.com.mesttra.helpdeskangular.services.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -11,19 +10,11 @@ import org.springframework.context.annotation.Profile;
 @Profile("dev")
 public class DevConfig {
 
-    @Autowired
-    private DBService dbService;
+
 
     @Value("${spring.jpa.hibernate.ddl-auto}")
     private String value;
 
-    @Bean
-    public void instanciaDB() {
 
-        if (value.equals("create")) {
-            dbService.instanciaDB();
-        }
-
-    }
 
 }

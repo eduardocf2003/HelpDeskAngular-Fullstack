@@ -3,7 +3,7 @@ package br.com.mesttra.helpdeskangular.entity;
 import br.com.mesttra.helpdeskangular.enums.PrioridadeTicket;
 import br.com.mesttra.helpdeskangular.enums.StatusTickets;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -51,6 +51,7 @@ public class Ticket implements Serializable {
         this.cliente = cliente;
         this.suporte = suporte;
     }
+
 
     public Integer getId() {
         return id;
