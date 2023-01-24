@@ -13,6 +13,7 @@ import { SuporteCreateComponent } from './components/suporte/suporte-create/supo
 import { SuporteDeleteComponent } from './components/suporte/suporte-delete/suporte-delete.component';
 import { SuporteUpdateComponent } from './components/suporte/suporte-update/suporte-update.component';
 import { TicketListComponent } from './components/ticket/ticket-list/ticket-list.component';
+import { TicketCreateComponent } from './components/ticket/ticket-create/ticket-create.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
       {path: 'clientes/update/:id', component: ClienteUpdateComponent},
       {path: 'clientes/delete/:id', component: ClienteDeleteComponent},
 
-      {path: 'ticket', component: TicketListComponent}
+      {path: 'ticket', component: TicketListComponent},
+      {path: 'ticket/create', component: TicketCreateComponent}
     ]
   }
 ];
