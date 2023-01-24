@@ -30,6 +30,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListaSuporteComponent } from './components/suporte/lista-suporte/lista-suporte.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 
 
 @NgModule({
@@ -66,7 +67,7 @@ import { LoginComponent } from './components/login/login.component';
     MatListModule,
     MatCardModule,
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
