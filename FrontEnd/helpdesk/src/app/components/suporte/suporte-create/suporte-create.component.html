@@ -6,7 +6,7 @@
         <section class="section">
             <mat-checkbox (click)="addPerfil(0)" class="margin">Gerente</mat-checkbox>
             <mat-checkbox (click)="addPerfil(2)" class="margin">Suporte</mat-checkbox>
-            <mat-checkbox (click)="addPerfil(1)" class="margin">Cliente</mat-checkbox>
+            <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="margin">Cliente</mat-checkbox>
           </section>
 
           <mat-form-field class="fullWidth" appearance="fill">

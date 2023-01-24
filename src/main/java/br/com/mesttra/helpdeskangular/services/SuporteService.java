@@ -50,7 +50,6 @@ public class SuporteService {
     public Suporte update(Integer id, @Valid SuporteDTO objeto) {
         objeto.setId(id);
         Suporte newObj = findById(id);
-        validaCpf(objeto);
         newObj = new Suporte(objeto);
         return suporteRepository.save(newObj);
 

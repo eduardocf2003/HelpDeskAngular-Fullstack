@@ -5,37 +5,37 @@
 
         <section class="section">
             <mat-checkbox (click)="addPerfil(0)" class="margin">Gerente</mat-checkbox>
-            <mat-checkbox (click)="addPerfil(2)" class="margin">Suporte</mat-checkbox>
+            <mat-checkbox (click)="addPerfil(2)" class="margin">Cliente</mat-checkbox>
             <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="margin">Cliente</mat-checkbox>
           </section>
 
           <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Nome</mat-label>
-            <input [(ngModel)]="suporte.nome" name="nome" [formControl]="nome" required matInput placeholder="Seu nome">
+            <input [(ngModel)]="cliente.nome" name="nome" [formControl]="nome" required matInput placeholder="Seu nome">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           </mat-form-field>
           
           <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>CPF</mat-label>
-            <input [(ngModel)]="suporte.cpf" name="cpf" [formControl]="cpf" required matInput placeholder="Seu CPF">
+            <input [(ngModel)]="cliente.cpf" name="cpf" [formControl]="cpf" required matInput placeholder="Seu CPF">
             <mat-icon matSuffix>pin</mat-icon>
           </mat-form-field>
 
           <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>E-mail</mat-label>
-            <input [(ngModel)]="suporte.email" name="email" [formControl]="email" required matInput placeholder="Seu E-mail">
+            <input [(ngModel)]="cliente.email" name="email" [formControl]="email" required matInput placeholder="Seu E-mail">
             <mat-icon matSuffix>mail</mat-icon>
           </mat-form-field>
 
           <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Telefone</mat-label>
-            <input [(ngModel)]="suporte.telefone" name="telefone" [formControl]="telefone" required matInput placeholder="Seu telefone">
+            <input [(ngModel)]="cliente.telefone" name="telefone" [formControl]="telefone" required matInput placeholder="Seu telefone">
             <mat-icon matSuffix>call</mat-icon>
           </mat-form-field>
 
           <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Senha</mat-label>
-            <input [(ngModel)]="suporte.senha" name="senha" [formControl]="senha" required matInput placeholder="Digite uma senha">
+            <input [(ngModel)]="cliente.senha" name="senha" [formControl]="senha" required matInput placeholder="Digite uma senha">
             <mat-icon matSuffix>password</mat-icon>
           </mat-form-field>
 
