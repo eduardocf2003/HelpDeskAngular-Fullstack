@@ -8,7 +8,7 @@ export interface Ticket {
     titulo: string;
     dataAbertura?: any;
     dataFechamento?: any;
-    descricao: string;
+    observacoes: string;
     suporte: any;
     cliente: any;
     nomeCliente: string;
