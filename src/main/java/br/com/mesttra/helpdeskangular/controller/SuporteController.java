@@ -47,7 +47,6 @@ public class SuporteController {
         return ResponseEntity.ok().body(listDTO);
     }
 
-    @PreAuthorize("hasAnyRole('GERENTE')")
     @PostMapping
     public ResponseEntity<SuporteDTO> create(@Valid @RequestBody SuporteDTO objetoDTO) {
         Suporte objeto = suporteService.create(objetoDTO);
@@ -55,15 +54,12 @@ public class SuporteController {
         return ResponseEntity.created(uri).build();
     }
 
-    @PreAuthorize("hasAnyRole('GERENTE')")
-
     @PutMapping(value = "/{id}")
     public ResponseEntity<SuporteDTO> update(@PathVariable Integer id, @Valid @RequestBody SuporteDTO objetoDTO) {
         Suporte objeto = suporteService.update(id, objetoDTO);
         return ResponseEntity.ok().body(new SuporteDTO(objeto));
     }
 
-    @PreAuthorize("hasAnyRole('GERENTE')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<SuporteDTO> delete(@PathVariable Integer id) {
         suporteService.delete(id);

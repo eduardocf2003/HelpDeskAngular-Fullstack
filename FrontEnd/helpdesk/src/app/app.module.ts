@@ -31,6 +31,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ListaSuporteComponent } from './components/suporte/lista-suporte/lista-suporte.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { SuporteCreateComponent } from './components/suporte/suporte-create/suporte-create.component';
+import { SuporteUpdateComponent } from './components/suporte/suporte-update/suporte-update.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     HeaderComponent,
     ListaSuporteComponent,
     LoginComponent,
+    SuporteCreateComponent,
+    SuporteUpdateComponent,
   ],
   imports: [
     BrowserModule,

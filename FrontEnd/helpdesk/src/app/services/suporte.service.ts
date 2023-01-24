@@ -13,4 +13,8 @@ export class SuporteService {
   findAll(): Observable<Suporte[]> {
     return this.http.get<Suporte[]>('http://localhost:8080/suporte');
   }
+
+  create( suporte: Suporte): Observable<Suporte> {
+    return this.http.post<Suporte>('http://localhost:8080/suporte', suporte);
+  }
 }
