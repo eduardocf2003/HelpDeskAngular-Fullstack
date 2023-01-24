@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente';
 import { Suporte } from 'src/app/models/suporte';
 import { Ticket } from 'src/app/models/ticket';
@@ -9,11 +9,11 @@ import { SuporteService } from 'src/app/services/suporte.service';
 import { TicketService } from 'src/app/services/ticket.service';
 
 @Component({
-  selector: 'app-ticket-create',
-  templateUrl: './ticket-create.component.html',
-  styleUrls: ['./ticket-create.component.css']
+  selector: 'app-ticket-update',
+  templateUrl: './ticket-update.component.html',
+  styleUrls: ['./ticket-update.component.css']
 })
-export class TicketCreateComponent implements OnInit {
+export class TicketUpdateComponent implements OnInit {
 
   ticket: Ticket = {
     prioridade: '',
@@ -37,15 +37,23 @@ export class TicketCreateComponent implements OnInit {
   cliente: FormControl = new FormControl(null, [Validators.required]);
   
   constructor(private clienteService: ClienteService, private suporteService: SuporteService,
-    private ticketService: TicketService, private router: Router) { }
+    private ticketService: TicketService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.ticket.id = this.route.snapshot.paramMap.get('id');
+    this.findById(this.ticket.id);
     this.findAllClientes();
     this.findAllSuporte();
   }
 
-  create(): void{
-    this.ticketService.create(this.ticket).subscribe((resposta) => {
+  findById(id: string): void{
+    this.ticketService.findById(id).subscribe((resposta) => {
+      this.ticket = resposta;
+    })
+  }
+  
+  update(): void{
+    this.ticketService.update(this.ticket).subscribe((resposta) => {
       this.ticket = resposta;
       console.log(this.ticket);
       this.router.navigate(['ticket']);
@@ -66,6 +74,26 @@ export class TicketCreateComponent implements OnInit {
   
   validaCampos(): boolean{
     return this.prioridade.valid && this.status.valid && this.titulo.valid && this.observacoes.valid && this.tecnico.valid && this.cliente.valid;
+  }
+
+  retornaStatus(status: any): string{
+    if(status == 0){
+      return "Aberto";
+    } else if(status == 1){
+      return "Em andamento";
+    } else {
+      return "Finalizado";
+    }
+  }
+
+  retornaPrioridade(prioridade: any): string{
+    if(prioridade == 0){
+      return "Baixa";
+    } else if(prioridade == 1){
+      return "Média";
+    } else {
+      return "Alta";
+    }
   }
 
 }

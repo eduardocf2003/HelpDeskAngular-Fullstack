@@ -11,7 +11,7 @@ export interface Ticket {
     observacoes: string;
     suporte: any;
     cliente: any;
-    nomeCliente: string;
-    nomeTecnico: string;
+    nomeCli: string;
+    nomeTec: string;
 
 }
